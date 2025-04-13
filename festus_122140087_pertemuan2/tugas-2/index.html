@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Personal Dashboard Mahasiswa</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <div id="datetime" class="datetime"></div>
+    <h1>Dashboard Mahasiswa</h1>
+
+    <section>
+      <h2>Jadwal Kuliah</h2>
+      <form id="schedule-form">
+        <input type="text" id="schedule-input" placeholder="Mata Kuliah" required />
+        <input type="datetime-local" id="schedule-datetime" required />
+        <button type="submit">Tambah</button>
+      </form>      
+      <ul id="schedule-list"></ul>
+    </section>
+
+    <section>
+      <h2>Daftar Tugas</h2>
+      <form id="task-form">
+        <input type="text" id="task-input" placeholder="Nama Tugas" required />
+        <input type="datetime-local" id="task-datetime" required />
+        <button type="submit">Tambah</button>
+      </form>      
+      <ul id="task-list"></ul>
+    </section>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
