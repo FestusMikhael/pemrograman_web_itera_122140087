@@ -1,0 +1,23 @@
+.container {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+  }
+  
+  .stats {
+    display: flex;
+    justify-content: space-between;
+    background-color: #f1f8ff;
+    padding: 1rem;
+    border-radius: 4px;
+    margin-bottom: 1.5rem;
+    font-size: 0.9rem;
+  }
+  
+  .empty-message {
+    text-align: center;
+    padding: 2rem;
+    background-color: #f8f9fa;
+    border-radius: 4px;
+    color: #6c757d;
+  }
