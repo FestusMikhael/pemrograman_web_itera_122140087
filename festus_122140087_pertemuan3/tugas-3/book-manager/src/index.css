@@ -1,0 +1,84 @@
+:root {
+  --primary-color: #4a6fa5;
+  --secondary-color: #166088;
+  --accent-color: #4fc3f7;
+  --background-color: #f8f9fa;
+  --text-color: #333;
+  --error-color: #d32f2f;
+  --success-color: #388e3c;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  line-height: 1.6;
+}
+
+button {
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  margin: 4px;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: var(--secondary-color);
+}
+
+input, select {
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  margin: 4px 0;
+}
+
+.error {
+  color: var(--error-color);
+  margin: 8px 0;
+}
+
+.success {
+  color: var(--success-color);
+  margin: 8px 0;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.nav {
+  background-color: var(--secondary-color);
+  padding: 15px;
+}
+
+.nav ul {
+  display: flex;
+  list-style: none;
+}
+
+.nav li {
+  margin-right: 20px;
+}
+
+.nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.nav a:hover {
+  color: var(--accent-color);
+}

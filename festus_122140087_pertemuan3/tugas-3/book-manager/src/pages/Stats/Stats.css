@@ -1,0 +1,51 @@
+/* Stats.css */
+.stats-page {
+    padding: 20px;
+  }
+  
+  .stats-page h1 {
+    color: var(--secondary-color);
+    margin-bottom: 30px;
+    text-align: center;
+  }
+  
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+  }
+  
+  .stat-card {
+    background: white;
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .stat-card h2 {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+    color: var(--text-color);
+  }
+  
+  .stat-card p {
+    font-size: 2em;
+    font-weight: bold;
+  }
+  
+  .stat-card.total {
+    border-top: 4px solid var(--primary-color);
+  }
+  
+  .stat-card.owned {
+    border-top: 4px solid var(--success-color);
+  }
+  
+  .stat-card.reading {
+    border-top: 4px solid var(--accent-color);
+  }
+  
+  .stat-card.wishlist {
+    border-top: 4px solid #ff9800;
+  }

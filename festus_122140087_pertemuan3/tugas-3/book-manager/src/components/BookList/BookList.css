@@ -1,0 +1,68 @@
+/* BookList.css */
+.book-list {
+    margin-top: 20px;
+  }
+  
+  .book-list ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .book-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    margin-bottom: 10px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  }
+  
+  .book-info h3 {
+    margin-bottom: 5px;
+    color: var(--secondary-color);
+  }
+  
+  .book-info .author {
+    color: #666;
+    font-size: 0.9em;
+  }
+  
+  .book-info .status {
+    font-weight: bold;
+    margin-top: 5px;
+  }
+  
+  .book-info .status.owned {
+    color: var(--success-color);
+  }
+  
+  .book-info .status.reading {
+    color: var(--primary-color);
+  }
+  
+  .book-info .status.wishlist {
+    color: #ff9800;
+  }
+  
+  .book-actions {
+    display: flex;
+  }
+  
+  .edit-btn {
+    background-color: #ffc107;
+    color: #000;
+  }
+  
+  .edit-btn:hover {
+    background-color: #ffa000;
+  }
+  
+  .delete-btn {
+    background-color: #f44336;
+  }
+  
+  .delete-btn:hover {
+    background-color: #d32f2f;
+  }
