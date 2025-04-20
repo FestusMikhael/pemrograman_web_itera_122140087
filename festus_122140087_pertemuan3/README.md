@@ -28,6 +28,7 @@ git clone https://github.com/username/book-manager.git
 cd book-manager
 npm install
 npm start
+```
 
 ![Screenshot 2025-04-20 225038](https://github.com/user-attachments/assets/536f73ca-9e6e-4f82-b0ce-158cfc8b68f5)
 ![Screenshot 2025-04-20 225231](https://github.com/user-attachments/assets/3cdce4d5-d18e-47be-97bc-23118954dcb2)
