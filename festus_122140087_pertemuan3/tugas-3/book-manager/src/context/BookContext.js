@@ -4,39 +4,46 @@ import PropTypes from 'prop-types';
 export const BookContext = createContext();
 
 export function BookProvider({ children }) {
-  const [books, setBooks] = useState([]);
+  const [books, setBooks] = useState(() => {
+    try {
+      const savedBooks = localStorage.getItem('books');
+      return savedBooks ? JSON.parse(savedBooks) : [];
+    } catch (error) {
+      console.error('Failed to load books from localStorage:', error);
+      return [];
+    }
+  });
+
   const [filter, setFilter] = useState('all');
   const [searchQuery, setSearchQuery] = useState('');
-  
-  useEffect(() => {
-    try {
-      const savedBooks = JSON.parse(localStorage.getItem('books')) || [];
-      setBooks(savedBooks);
-    } catch (error) {
-      console.error('Failed to parse books from localStorage', error);
-      setBooks([]);
-    }
-  }, []);
 
   useEffect(() => {
-    localStorage.setItem('books', JSON.stringify(books));
+    try {
+      localStorage.setItem('books', JSON.stringify(books));
+    } catch (error) {
+      console.error('Failed to save books to localStorage:', error);
+    }
   }, [books]);
 
   const addBook = (newBook) => {
     if (!newBook.title || !newBook.author) {
       throw new Error('Judul dan penulis harus diisi');
     }
-    setBooks([...books, { ...newBook, id: Date.now() }]);
+    setBooks(prevBooks => [...prevBooks, { ...newBook, id: Date.now() }]);
   };
 
   const updateBook = (id, updatedBook) => {
-    setBooks(books.map(book => book.id === id ? { ...book, ...updatedBook } : book));
+    setBooks(prevBooks => 
+      prevBooks.map(book => 
+        book.id === id ? { ...book, ...updatedBook } : book
+      )
+    );
   };
 
   const deleteBook = (id) => {
-    setBooks(books.filter(book => book.id !== id));
+    setBooks(prevBooks => prevBooks.filter(book => book.id !== id));
   };
-
+  
   const filteredBooks = books.filter(book => {
     const matchesFilter = filter === 'all' || book.status === filter;
     const matchesSearch = book.title.toLowerCase().includes(searchQuery.toLowerCase()) || 
